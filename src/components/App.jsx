@@ -1,20 +1,13 @@
 import React from "react";
+import LoginComponent from "./Form";
 
-// const isLoggedIn = true;
+const isLoggedIn = false;
 
-const checkStatus = () => {
-  const isLoggedIn = false;
-  return isLoggedIn ? (
-    <h1>Hello</h1>
-  ) : (
-    <form className="form">
-      <input type="text" placeholder="Username" />
-      <input type="password" placeholder="Password" />
-      <button type="submit">Login</button>
-    </form>
-  );
+const conditionallyRender = () => {
+  return isLoggedIn ? <h1>Hello</h1> : <LoginComponent />;
+  // return isLoggedIn  && <LoginComponent />
 };
 
-const App = () => <div className="container">{checkStatus()}</div>;
+const App = () => <div className="container">{conditionallyRender()}</div>;
 
 export default App;
